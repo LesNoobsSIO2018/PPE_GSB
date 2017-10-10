@@ -12,10 +12,31 @@
 
     </head>
     <body>
-        <input type="button" value="bonjour">
-        <?php
-        
-        ?>
+        <h2>Création et modification d'un médicaments</h2>
+         <input type="text">
+        <input type="button" value="créer">
+        <br>
+        <br>
+        <br>
+        <h2>Liste des prescriptions existantes</h2>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Composition</th>
+                <th>Prix échantillon</th>
+            </tr>
+            <?php
+                foreach($lesMedicaments as $med){
+                
+            ?>
+            <tr>
+                <td><?php echo $med->MED_NOMCOMMERCIAL;?></td>
+                <td><?php echo $med->MED_COMPOSITION;?></td>
+                <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
+                <td><input type="button" value="Modifier"></td>
+            </tr> 
+            <?php } ?>
+        </table>
     </body>
 </html>
     
