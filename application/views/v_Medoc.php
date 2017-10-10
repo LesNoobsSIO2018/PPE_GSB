@@ -12,7 +12,10 @@
 
     </head>
     <body>
-        <input type="button" value="bonjour"></input>
+        <input type="button" value="bonjour">
+        <?php
+        
+        ?>
     </body>
 </html>
     
