@@ -13,21 +13,25 @@
         <br>
         <br>
         <h2>Liste des prescriptions existantes</h2>
-        <table>
-            <tr>
-                <th>Nom</th>
-                <th>Composition</th>
-                <th>Prix échantillon</th>
-            </tr>
-            <?php
-                foreach($lesMedicaments as $med){
-                }
-            ?>
-            <tr>
-                <th><?php echo $med->MED_NOMCOMMERCIAL;?></th>
-                <th><?php echo $med->MED_COMPOSITION;?></th>
-                <th><?php echo $med->MED_PRIXECHANTILLON;?></th>
-            </tr>
-        </table>
+        <select id="lstMedoc">
+            
+                
+           
+            <option value="1"></option>
+                
+        </select>
+        <select id="lstTypeIndividu">
+            
+                
+            
+            <option id="1"></option>
+            </select>
+        <select id="dosage">
+            
+                
+          
+            <option value="1"></option>
+                
+        </select>
     </body>
 </html>
