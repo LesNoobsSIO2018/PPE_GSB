@@ -17,7 +17,10 @@ class Ctrl_Medoc extends CI_Controller
         $this->load->view("v_TypeIndividu",$data);
     }
     public function getPrescription(){
-        $this->load->view("v_Prescription");
+        $this->load->model("Model_Prescription");
+        $this->load->model("Model_Medoc");
+        $data["lesMedicaments"]=$this->Model_Medoc->getAllMedicament();
+        $this->load->view("v_Prescription", $data);
         
     }
 }
