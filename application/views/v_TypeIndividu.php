@@ -16,6 +16,7 @@
                     <br>
                 <input type="button" value="médicaments" onClick="location.href='../../index.php/Ctrl_Medoc/getAllMedicament'">
                 <input type="button" value="prescription" onclick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
+                <input type="button" value="Acceuil" onClick="location.href='../../../PPE'">
                     <br>
                     <br>
                     <br>

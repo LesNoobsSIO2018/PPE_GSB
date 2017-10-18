@@ -7,7 +7,7 @@ class Ctrl_Medoc extends CI_Controller
         $this->load->view("v_Accueil");
     }
     public function getAllMedicament(){
-         $this->load->model("Model_Medoc");
+        $this->load->model("Model_Medoc");
         $data["lesMedicaments"]=$this->Model_Medoc->getAllMedicament();
         $this->load->view("v_Medoc",$data);
     }
