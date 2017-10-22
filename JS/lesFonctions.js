@@ -16,7 +16,7 @@ function creerMedicament()
                     alert("Erreur de saisie");
                 }
             }
-    )
+    );
 }
 function modifMedoc(){
     
