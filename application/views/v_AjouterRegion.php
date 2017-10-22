@@ -2,7 +2,7 @@
 <html>
     <head>
         <title> Gestion des régions </title>
-        <h1> Gestion des Régions  <a class="btn btn-primary" href='<?php //echo base_url(); ?>http://127.0.0.1/PPEVisiteurs/'>Retourner à l'accueil</a></h1>
+        <h1> Gestion des Régions  <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
         
         
         <!-- Latest compiled and minified CSS -->

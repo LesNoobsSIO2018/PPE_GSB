@@ -14,11 +14,14 @@ class Ctrl_Visiteur extends CI_Controller{
         public function ajouterVisiteur(){
            $this->load->model("Model_Visiteur"); 
          $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
-         //$this->load->view("v_AjouterVisiteur",$data);
+         $data["lesSector"] = $this->Model_Visiteur->getSecteur();
+         $this->load->view('v_AjouterVisiteur',$data);
        
-          if($this->form_validation->run()==False)
+        }
+         public function form_visiteur(){
+          if($this->form_validation->run()==true)
           {
-              $this->load->view('v_AjouterVisiteur',$data);
+              $this->ajouterVisiteur();
           }
           else{
               $this->load->model("Model_Visiteur");
@@ -33,10 +36,10 @@ class Ctrl_Visiteur extends CI_Controller{
                   'SEC_CODE' =>$this->input->post('SEC_CODE'),
                   'LAB_CODE' =>$this->input->post('LAB_CODE')
                       );
-              
+//                      var_dump($data);
+//                      die;
               $this->Model_Visiteur->insertVisiteurs($data);
-              $data['lesVisiteurs']=$this->Model_Visiteur->GetAllVisiteur();
-              //$this->load->view("v_AjouterVisiteur",$data);
+              $this->ajouterVisiteur();
           }  
         }
         public function modifierVisiteur(){
@@ -47,8 +50,19 @@ class Ctrl_Visiteur extends CI_Controller{
         public function ajouterRegion(){
         $this->load->model("Model_Region");
         $data["lesRegions"]=$this->Model_Region->GetAllRegion();
+         $data["lesSector"] = $this->Model_Visiteur->getSecteur();
         $this->load->view("v_AjouterRegion", $data);
           }
-            
+          
+        public function modifierRegion(){
+        $this->load->model("Model_Region");
+        $data["lesRegions"]=$this->Model_Region->GetAllRegion();
+        $this->load->view("v_ModifierRegion", $data);
+          }  
+          
+         
+          
+          
+        
         }
 

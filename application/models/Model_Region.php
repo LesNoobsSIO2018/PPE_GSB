@@ -9,5 +9,10 @@ class Model_Region extends CI_Model{
     public function insertRegion($data){
          $this->db->insert("region",$data);
     }
+    
+    public function getSecteur(){
+          $sql = $this->db->query("select * from secteur");
+       return $sql->result();
+    }
 
 }

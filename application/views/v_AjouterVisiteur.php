@@ -2,7 +2,7 @@
 <html>
     <head>
         <title> Gestions des visiteurs </title>
-        <h1> Gestion des visiteurs  <a class="btn btn-primary" href='<?php //echo base_url(); ?>http://127.0.0.1/PPEVisiteurs/'>Retourner à l'accueil</a></h1>
+        <h1> Gestion des visiteurs  <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
         
         <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,7 +18,7 @@
             
                 
                 
-            <?php echo form_open('Ctrl_Visiteur/ajouterVisiteur/');  ?>
+            <?php echo form_open('Ctrl_Visiteur/form_visiteur');  ?>
             
             
             <h4><b>Veuillez saisir les coordonnées du visiteurs:</b></h4>
@@ -29,6 +29,7 @@
             <br><label>CP:</label></br><input type="text" name="VIS_CP" />
             <br><label>Ville</label></br><input type="text" name="VIS_VILLE" />
             <br><label>Date d'embauche</label></br><input type="date"  name="VIS_DATEEMBAUCHE">
+            <br>
             <br><label>Code secteur</label></br><input type="text"  name="SEC_CODE">
             <br><label>Code laboratoire</label></br><input type="text"  name="LAB_CODE">
             <input type="submit" class="btn btn-info" name="subValider" value="Ajouter le visiteur" >
