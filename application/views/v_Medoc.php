@@ -7,18 +7,16 @@
                 <script type="text/javascript" src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>       
                 <script type="text/javascript">
                     $(
-                        function()
-                        {
-                          $('#btnMedoc').click
-                    (
-                        function()
-                        {  
-                          
-                            creerMedicament();
-                          
-                        }
-                    );   
-                        }
+                                    function()
+                                    {
+                                      $('#btnMedoc').click(
+                                             function()
+                                            {  
+
+                                              creerMedicament();
+
+                                                } );   
+                                    }
                      );
                 </script>
     </head>

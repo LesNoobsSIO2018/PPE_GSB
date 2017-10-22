@@ -24,7 +24,7 @@ class Ctrl_Medoc extends CI_Controller
     }
     public function creerMedicament(){
         $depot = $_POST['depot'];
-        $$nom=$_POST['nom'];
+        $nom=$_POST['nom'];
         $code=$_POST['code'];
         $compo=$_POST['compo'];
         $effets=$_POST['effets'];
