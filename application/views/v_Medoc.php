@@ -9,13 +9,15 @@
                     $(
                                     function()
                                     {
-                                      $('#btnMedoc').click(
+                                      $('#btnMedoc').click
+                                      (
                                              function()
                                             {  
 
                                               creerMedicament();
 
-                                                } );   
+                                                }
+                                       );   
                                     }
                      );
                 </script>
