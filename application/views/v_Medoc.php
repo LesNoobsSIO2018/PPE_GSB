@@ -9,7 +9,7 @@
                     $(
                         function()
                         {
-                          $('#btn1').click
+                          $('#btnMedoc').click
                     (
                         function()
                         {  
@@ -19,7 +19,7 @@
                         }
                     );   
                         }
-                     )
+                     );
                 </script>
     </head>
         <body>
@@ -59,6 +59,8 @@
                         <?php } ?>
                 </table>
                     <br>
+                        <div id="div1"></div>
+                        <div id="div2"></div>
         </body>
 </html>
     

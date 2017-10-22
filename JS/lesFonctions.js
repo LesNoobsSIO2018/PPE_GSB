@@ -1,6 +1,6 @@
 function creerMedicament()
 {
-    $Ajax
+    $.ajax
     (
             {
                 type="post",
@@ -20,6 +20,11 @@ function creerMedicament()
 }
 function modifMedoc()
 {
-    
+    $.ajax
+    (
+            {
+                
+            }
+    );
 }
 
