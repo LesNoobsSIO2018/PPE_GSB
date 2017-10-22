@@ -10,6 +10,11 @@ class Model_Medoc extends CI_Model
     {
        $sql=$this->db->query("INSERT INTO medicament value('".$depot."','".$nom."','".$code."','".$compo."','".$effets."','".$contreindic."','".$prix."') ");
     }
+    public function modifMedoc($depot,$nom,$code,$compo,$effets,$contreindic,$prix)
+    {
+        $sql=$this->db->query("UPDATE medicament SET");
+    }
 }
+
 
 
