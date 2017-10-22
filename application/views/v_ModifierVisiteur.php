@@ -16,8 +16,8 @@
 </head>
         <body>
                    
-            <!--<br><input class="btn btn-primary" type="button" value="Ajouter le visiteur" href="url de la page"/></br>-->
-            <h4><b>Veuillez choisir un visiteur pour pouvoir le modifier:</b></h4>
+       
+            <h4><b>Veuillez choisir un visiteur pour pouvoir le modifier</b></h4>
            <table class="table">
                <tr>
                    <th>Matricule</th>
@@ -27,7 +27,7 @@
                    <th>CP</th>
                    <th>Ville</th>
                    <th>Date d'embauche</th>
-                   <th>Secteur code</th>
+                   <th>Code secteur</th>
                    <th>Code du laboratoire</th>
                </tr>
                 <?php     

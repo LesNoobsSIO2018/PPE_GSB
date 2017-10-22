@@ -19,22 +19,25 @@
            
                 
                 
-            <?php echo form_open('Ctrl_Visiteur/ajouterRegion/');  ?>
+            <?php echo form_open('Ctrl_Visiteur/form_region');  ?>
             
                 
             <h4><b>Veuillez saisir les informations de la région</b></h4>
-            <br><label>Code de la region:</label></br><input type="text" name="VIS_MATRICULE" value="" />
-            <br><label>Secteur:</label></br><input type="text" name="VIS_NOM" value="" />
-            <br><label>Libellé région:</label></br><input type="text" name="Vis_PRENOM" value="" />
- 
+            <br><label>Code de la region:</label><input type="text" name="REG_CODE" value="" />
+            
+            <br><label>Libellé région:</label><input type="text" name="REG_NOM" value="" />
+            <br><label>Code secteur</label>
+            <select name="SEC_CODE" id="lstSec">
+                <?php foreach ($lesSecteurs as $sec){ 
+                    echo "<option value='".$sec->SEC_CODE."'>".$sec->SEC_LIBELLE."</option>";
+                }
+                    ?>
+                
+            </select>
+    
             <input type="submit" class="btn btn-info" name="subValider" value="Ajouter la région" >
                 
-                
            
-            
-            <!--<br><input class="btn btn-primary" type="button" value="Ajouter le visiteur" href="url de la page"/></br>-->
-       
-                
            <table class="table">
                <tr>
                    <th>Code de la région</th>
@@ -47,7 +50,7 @@
                 ?>
                <tr>
                    <td><?php echo $reg->REG_CODE;?></td>
-                   <td><?php echo $reg->SEC_CODE;?></td>
+                   <td><?php echo $reg->SEC_LIBELLE;?></td>
                    <td><?php echo $reg->REG_NOM;?></td>
 
                    <td><input type="button" class="btn btn-info" value="Choisir cette région">

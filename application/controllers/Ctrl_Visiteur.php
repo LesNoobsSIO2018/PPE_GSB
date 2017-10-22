@@ -13,8 +13,10 @@ class Ctrl_Visiteur extends CI_Controller{
         }
         public function ajouterVisiteur(){
            $this->load->model("Model_Visiteur"); 
+           $this->load->model("Model_Region"); 
          $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
-         $data["lesSector"] = $this->Model_Visiteur->getSecteur();
+         $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
+         $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
          $this->load->view('v_AjouterVisiteur',$data);
        
         }
@@ -49,20 +51,38 @@ class Ctrl_Visiteur extends CI_Controller{
           }
         public function ajouterRegion(){
         $this->load->model("Model_Region");
+        
         $data["lesRegions"]=$this->Model_Region->GetAllRegion();
-         $data["lesSector"] = $this->Model_Visiteur->getSecteur();
+         $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
         $this->load->view("v_AjouterRegion", $data);
           }
           
-        public function modifierRegion(){
+          public function form_region(){
+                        if($this->form_validation->run()==true)
+                    {
+                        $this->ajouterRegion();
+                    }
+                    else{
+                        $this->load->model("Model_Region");
+                        $data = array(
+                            'REG_CODE'=>$this->input->post('REG_CODE'),
+                            'REG_NOM' => $this->input->post('REG_NOM'),
+                            'SEC_CODE' =>$this->input->post('SEC_CODE')
+                               
+                        );
+                        
+                       $this->Model_Region->insertRegion($data);
+                      $this->ajouterRegion();
+                    }
+          }
+
+
+          public function modifierRegion(){
         $this->load->model("Model_Region");
         $data["lesRegions"]=$this->Model_Region->GetAllRegion();
         $this->load->view("v_ModifierRegion", $data);
           }  
           
-         
-          
-          
-        
+     
         }
 

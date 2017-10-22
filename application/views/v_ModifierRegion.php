@@ -18,13 +18,9 @@
         <body>
            
                 
-                
-            <?php echo form_open('Ctrl_Visiteur/ajouterRegion/');  ?>
+            <h4><b>Veuillez choisir une région pour pouvoir la modifier</b></h4>    
+            <?php echo form_open('Ctrl_Visiteur/modifierRegion/');  ?>
             
-       
-            <!--<br><input class="btn btn-primary" type="button" value="Ajouter le visiteur" href="url de la page"/></br>-->
-       
-                
            <table class="table">
                <tr>
                    <th>Code de la région</th>

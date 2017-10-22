@@ -21,25 +21,31 @@
             <?php echo form_open('Ctrl_Visiteur/form_visiteur');  ?>
             
             
-            <h4><b>Veuillez saisir les coordonnées du visiteurs:</b></h4>
-            <br><label>Matricule:</label></br><input type="text" name="VIS_MATRICULE" />
-            <br><label>Nom:</label></br><input type="text" name="VIS_NOM" />
-            <br><label>Prénom:</label></br><input type="text" name="Vis_PRENOM" />
-            <br><label>Adresse:</label></br><input type="text" name="VIS_ADRESSE" />
-            <br><label>CP:</label></br><input type="text" name="VIS_CP" />
-            <br><label>Ville</label></br><input type="text" name="VIS_VILLE" />
-            <br><label>Date d'embauche</label></br><input type="date"  name="VIS_DATEEMBAUCHE">
-            <br>
-            <br><label>Code secteur</label></br><input type="text"  name="SEC_CODE">
-            <br><label>Code laboratoire</label></br><input type="text"  name="LAB_CODE">
-            <input type="submit" class="btn btn-info" name="subValider" value="Ajouter le visiteur" >
+            <h4><b>Veuillez saisir les coordonnées du visiteurs</b></h4>
+            <br><label>Matricule: </label><input type="text" name="VIS_MATRICULE" />
+            <br><label>Nom: </label><input type="text" name="VIS_NOM" />
+            <br><label>Prénom: </label><input type="text" name="Vis_PRENOM" />
+            <br><label>Adresse: </label><input type="text" name="VIS_ADRESSE" />
+            <br><label>CP: </label><input type="text" name="VIS_CP" />
+            <br><label>Ville: </label><input type="text" name="VIS_VILLE" />
+            <br><label>Date d'embauche: </label><input type="date" name="VIS_DATEEMBAUCHE">
+            <br><label>Code secteur: </label>
+            <select name="SEC_CODE" id="lstSec">
+                <?php foreach ($lesSecteurs as $sec){ 
+                    echo "<option value='".$sec->SEC_CODE."'>".$sec->SEC_LIBELLE."</option>";
+                }
+                    ?>
+                
+            </select>
+            <br><label>Libellé laboratoire: </label>
+            <select name="LAB_CODE" id="lstLab">
+                <?php foreach ($lesLabos as $l){ 
+                    echo "<option value='".$l->LAB_CODE."'>".$l->LAB_NOM."</option>";
+                }
+                    ?>
+            <br><input type="submit" class="btn btn-info" name="subValider" value="Ajouter le visiteur" >
                 </td>
-                
-           
-            
-            <!--<br><input class="btn btn-primary" type="button" value="Ajouter le visiteur" href="url de la page"/></br>-->
-       
-                
+              
            <table class="table">
                <tr>
                    <th>Matricule</th>
@@ -49,7 +55,7 @@
                    <th>CP</th>
                    <th>Ville</th>
                    <th>Date d'embauche</th>
-                   <th>Secteur code</th>
+                   <th>Code secteur</th>
                    <th>Code du laboratoire</th>
                </tr>
                 <?php     
@@ -66,7 +72,7 @@
                    <td><?php echo $vis->SEC_CODE;?></td>
                    <td><?php echo $vis->LAB_CODE;?></td>
                    
-                   <td><input type="button" class="btn btn-info" value="Choisir">
+                   
                </tr>
           <?php   
             }
