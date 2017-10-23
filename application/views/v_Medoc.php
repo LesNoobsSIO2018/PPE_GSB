@@ -84,13 +84,13 @@
                         ?>
             <tbody>
                 <tr>
-                    <td><?php echo $medicament->MED_DEPOTLEGAL; ?></td>
-                    <td><?php echo $medicament->MED_NOMCOMMERCIAL;?></td>
-                    <td><?php echo $medicament->FAM_CODE;?></td>
-                    <td><?php echo $medicament->MED_COMPOSITION;?></td>
-                    <td><?php echo $medicament->MED_EFFETS;?></td>
-                    <td><?php echo $medicament->MED_CONTREINDIC;?></td>
-                    <td><?php echo $medicament->MED_PRIXECHANTILLON;?></td>
+                    <td><?php echo $med->MED_DEPOTLEGAL; ?></td>
+                    <td><?php echo $med->MED_NOMCOMMERCIAL;?></td>
+                    <td><?php echo $med->FAM_CODE;?></td>
+                    <td><?php echo $med->MED_COMPOSITION;?></td>
+                    <td><?php echo $med->MED_EFFETS;?></td>
+                    <td><?php echo $med->MED_CONTREINDIC;?></td>
+                    <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
                     <td><input id="btn2" type="button" value="Modifier"></td>
                 </tr>
             </tbody>
