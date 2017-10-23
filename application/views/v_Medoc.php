@@ -57,7 +57,6 @@
         <input id="txtContre" type="text" placeholder="contre indication">
         <input id="txtPrix" type="text" placeholder="prix échantillon">
         <input id="btn1" type="button" value="Inserer">
-        <input id="btn2" type="button" value="Modifier">
             <br>
             <br>
         <input type="button" value="individu" onClick="location.href='../../index.php/Ctrl_Medoc/getIndividus'">
@@ -69,8 +68,12 @@
         <table>
             <thead>
                 <tr> 
+                        <th>Depot</th>
                         <th>Nom</th>
+                        <th>Code</th>
                         <th>Composition</th>
+                        <th>Effets</th>
+                        <th>Contre-indication</th>
                         <th>Prix</th>
                 </tr>
             </thead>
@@ -81,9 +84,13 @@
                         ?>
             <tbody>
                 <tr>
-                    <td><?php echo $med->MED_NOMCOMMERCIAL;?></td>
-                    <td><?php echo $med->MED_COMPOSITION;?></td>
-                    <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
+                    <td><?php echo $medicament->MED_DEPOTLEGAL; ?></td>
+                    <td><?php echo $medicament->MED_NOMCOMMERCIAL;?></td>
+                    <td><?php echo $medicament->FAM_CODE;?></td>
+                    <td><?php echo $medicament->MED_COMPOSITION;?></td>
+                    <td><?php echo $medicament->MED_EFFETS;?></td>
+                    <td><?php echo $medicament->MED_CONTREINDIC;?></td>
+                    <td><?php echo $medicament->MED_PRIXECHANTILLON;?></td>
                     <td><input id="btn2" type="button" value="Modifier"></td>
                 </tr>
             </tbody>
