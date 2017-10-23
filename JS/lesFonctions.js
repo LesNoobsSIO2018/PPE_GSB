@@ -1,11 +1,53 @@
+function creerIndividu()
+{
+        
+        $.ajax 
+        (
+            {
+                type:"post",
+                url:"InsertionLeTypeIndividu",
+                data:"libelle="+$('#txt1').val()+"&code="+$('#p1').text(),
+                success:function(data)
+                {
+                    $('#divTypesIndividus').empty();
+                    $('#divTypesIndividus').append(data);
+                },
+                error:function()
+                {
+                   alert('erreur');
+                }
+            }
+                 
+        );   
+}
+function modifIndividu()
+{
+    $.ajax
+    (
+        {
+                type:"post",
+                url:"ModificationLeTypeIndividu",
+                data: "nvlibelle="+$('#txt1').val()+"&code="+$('#lstTypes option:selected').val(),
+                success:function(data)
+                {
+                    $('#div2').empty();
+                    $('#div2').append(data);
+                },
+                error:function()
+                {
+                   alert('erreur');
+                }
+        }
+    );
+}
 function creerMedicament()
 {
     $.ajax
     (
             {
                 type:"post",
-                url:"creerMedicament",
-                data:"depot="+$('#MED_DEPOTLEGAL').val()+" &nom="+$('#MED_NOMCOMMERCIAL').val()+" &code="+$('#FAM_CODE').val()+" &compo="+$('#MED_COMPOSITION').val()+" &effets="+$('#MED_EFFETS').val()+" &contreindic="+$('#MED_CONTREINDIC').val()+" &prix="+$('#MED_PRIXECHANTILLON').val(),
+                url:"InsertionLeMedicament",
+                data:"depot="+$('#txtDepot').val()+"&nom="+$('#txtNom').val()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').val()+"&effets="+$('#txtEffets').val()+"&contre="+$('#txtContre').val()+"&prix="+$('#txtPrix').val(),
                 success:function(data)
                 {
                     $('#div1').empty();
@@ -13,19 +55,29 @@ function creerMedicament()
                 },
                 error:function()
                 {
-                    alert("Erreur de saisie");
+                    alert('erreur');
                 }
             }
     );
 }
-function modifMedoc()
+function modifMedicament()
 {
     $.ajax
     (
-            {
+        {
                 type:"post",
-                url:"modifMedoc",
-            }
+                url:"ModificationLeMedicament",
+                data: "depot="+$('#txtDepot').val()+"&nom="+$('#txtNom').val()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').val()+"&effets="+$('#txtEffets').val()+"&contre="+$('#txtContre').val()+"&prix="+$('#txtPrix').val(),
+                success:function(data)
+                {
+                    $('#div2').empty();
+                    $('#div2').append(data);
+                },
+                error:function()
+                {
+                   alert('erreur');
+                   
+                }
+        }
     );
 }
-

@@ -32,7 +32,7 @@
                 </select>
                 <select name="lstTypeIndividu">
                     <?php
-                        foreach($lesIndividus as $tin){
+                        foreach($lesIndividus as $types){
                     ?>
                     <option id="1">
                         <?php echo $tin->TIN_LIBELLE;?>

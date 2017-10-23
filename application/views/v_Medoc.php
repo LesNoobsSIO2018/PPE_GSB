@@ -1,67 +1,101 @@
 <html>
     <head>
-        <title>Médicaments</title>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-                <script type="text/javascript" src="<?php echo base_url(); ?>JS/lesFonctions.js"></script>
-                <script type="text/javascript" src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>       
-                <script type="text/javascript">
-                    $(
-                                    function()
-                                    {
-                                      $('#btnMedoc').click
-                                      (
-                                             function()
-                                            {  
-
-                                              creerMedicament();
-
-                                                }
-                                       );   
-                                    }
-                     );
-                </script>
+        <title>Medicaments</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src = "<?php echo base_url();?>JS/lesFonctions.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
+        <script type="text/javascript">
+            $(
+                    function()
+                    {
+                        $('#btn1').click
+                    (
+                        function()
+                        {  
+                            creerMedicament();
+                          
+                        }
+                    ); 
+                       
+   
+                        $('tr').click
+                        (
+                                function()
+                        {
+                            $('#txtDepot').val($(this).children(0).eq(0).text());
+                            $('#txtNom').val($(this).children(0).eq(1).text());
+                            $('#txtFam').val($(this).children(0).eq(2).text());
+                            $('#txtCompo').val($(this).children(0).eq(3).text());
+                            $('#txtEffets').val($(this).children(0).eq(4).text());
+                            $('#txtContre').val($(this).children(0).eq(5).text());
+                            $('#txtPrix').val($(this).children(0).eq(6).text());
+                        }
+                        );
+                        $('#btn2').click
+                    (
+                        function()
+                        {  
+                           // alert($('#txtEffets').val());
+                            modifMedicament();
+                          
+                        }
+                    ); 
+                  
+                }
+                
+               );
+        </script>
     </head>
-        <body>
-            <h2>Création et modification d'un médicaments</h2>
-                <input type="text" name="MED_DEPOTLEGAL" placeholder="Dépot légal">
-                <input type="text" name="MED_NOMCOMMERCIAL" placeholder="nom médicament">
-                <input type="text" name="FAM_CODE" placeholder="Code famille">
-                <input type="text" name="MED_COMPOSITION" placeholder="Composition">
-                <input type="text" name="MED_EFFETS" placeholder="Effets">
-                <input type="text" name="MED_CONTREINDIC" placeholder="Contre indication">
-                <input type="text" name="MED_PRIXECHANTILLON" placeholder="Prix échantillon">
-                <input type="submit" value="créer" name="btnMedoc">
-                    <br>
-                    <br>
-                <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
-                <input type="button" value="Individu" onClick="location.href='../../index.php/Ctrl_Medoc/getAllIndividu'">
-                <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
-                    <br>
-                    <br>
-                    <br>
-            <h2>Liste des médicaments existants</h2>
-                <table>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Composition</th>
-                        <th>Prix échantillon</th>
-                    </tr>
-                        <?php
-                            foreach($lesMedicaments as $med){
+    <body>
+        <h1> Medicaments </h1>
+       <input id="txtDepot" type="text" placeholder="dépot légal">
+        <input id="txtNom" type="text" placeholder="nom commercial">
+        <input id="txtFam" type="text" placeholder="code famille">
+        <input id="txtCompo" type="text" placeholder="composition">
+        <input id="txtEffets" type="text" placeholder="effets">
+        <input id="txtContre" type="text">
+        <input id="txtPrix" type="text">
+        <input id="btn1" type="button" value="Inserer">
+        <input id="btn2" type="button" value="Modifier">
+        <br>
+        <input type="button" value="individu" onClick="location.href='../../index.php/Ctrl_Medoc/getIndividus'">
+        <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
+        <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
+        
+        <br>
+
+        <table>
+            <thead>
+                <tr> <th>Depot</th><th>Nom</th><th>Code</th><th>Composition</th><th>Effets</th><th>Contre-indication</th><th>Prix</th></tr>
+            </thead>
+                <?php 
+                 
+                    foreach($lesMedicaments as $med)
+                        {
                         ?>
-                    <tr>
-                        <td><?php echo $med->MED_NOMCOMMERCIAL;?></td>
-                        <td><?php echo $med->MED_COMPOSITION;?></td>
-                        <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
-                        <td><input type="button" value="Modifier" id=btnModMedoc"></td>
-                    </tr> 
-                        <?php } ?>
-                </table>
-                    <br>
-                        <div id="div1"></div>
-                        <div id="div2"></div>
-        </body>
+            <tbody>
+                <tr>
+                    <td><?php echo $med->MED_DEPOTLEGAL; ?></td>
+                    <td><?php echo $med->MED_NOMCOMMERCIAL;?></td>
+                    <td><?php echo $med->FAM_CODE;?></td>
+                    <td><?php echo $med->MED_COMPOSITION;?></td>
+                    <td><?php echo $med->MED_EFFETS;?></td>
+                    <td><?php echo $med->MED_CONTREINDIC;?></td>
+                    <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
+                </tr>
+
+            </tbody>
+                 <?php 
+                      
+                        }                       
+                ?>
+        
+        </table>
+        
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </body>
 </html>
     
 
