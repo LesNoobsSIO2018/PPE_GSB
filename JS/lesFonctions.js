@@ -5,7 +5,7 @@ function creerIndividu()
         (
             {
                 type:"post",
-                url:"InsertionLeTypeIndividu",
+                url:"creerIndividu",
                 data:"libelle="+$('#txt1').val()+"&code="+$('#p1').text(),
                 success:function(data)
                 {
@@ -14,7 +14,7 @@ function creerIndividu()
                 },
                 error:function()
                 {
-                   alert('erreur');
+                   alert('erreur pour créer');
                 }
             }
                  
@@ -26,7 +26,7 @@ function modifIndividu()
     (
         {
                 type:"post",
-                url:"ModificationLeTypeIndividu",
+                url:"modifIndividu",
                 data: "nvlibelle="+$('#txt1').val()+"&code="+$('#lstTypes option:selected').val(),
                 success:function(data)
                 {
@@ -46,7 +46,7 @@ function creerMedicament()
     (
             {
                 type:"post",
-                url:"InsertionLeMedicament",
+                url:"creerMedicament",
                 data:"depot="+$('#txtDepot').val()+"&nom="+$('#txtNom').val()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').val()+"&effets="+$('#txtEffets').val()+"&contre="+$('#txtContre').val()+"&prix="+$('#txtPrix').val(),
                 success:function(data)
                 {
@@ -66,7 +66,7 @@ function modifMedicament()
     (
         {
                 type:"post",
-                url:"ModificationLeMedicament",
+                url:"modifMedicament",
                 data: "depot="+$('#txtDepot').val()+"&nom="+$('#txtNom').val()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').val()+"&effets="+$('#txtEffets').val()+"&contre="+$('#txtContre').val()+"&prix="+$('#txtPrix').val(),
                 success:function(data)
                 {

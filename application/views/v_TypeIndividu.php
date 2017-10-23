@@ -44,19 +44,18 @@
         
     </head>
     <body>
-        <input type="button" value="médicaments" onClick="location.href='../../index.php/Ctrl_Medoc/getAllMedicaments'">
-        <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
-        <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
         <div id="divTypesIndividus">
         <h1>Les Types Individus</h1>
+                <br>
+            <input type="button" value="médicaments" onClick="location.href='../../index.php/Ctrl_Medoc/getAllMedicaments'">
+            <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
+            <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
         <div>
             <p>Saisir un type d'individus :</p>
             <input id="txt1" type="text">
             <input id="sub1" type="button" value ="Modifier"  >
             <input id="sub2" type="button" value ="Inserer">
         </div>
-        
-        
             <select id="lstTypes">
                 <?php 
                     foreach($lesIndividus as $types)

@@ -43,8 +43,8 @@ public function creerMedicament()
             $effets = $_POST['effets'];
             $contreindic = $_POST['contre'];
             $prix = $_POST['prix'];
-            $this->load->model("Model_MedicamentPC");
-            $this->Model_MedicamentPC->creerMedicament($depot,$nom,$code,$compo,$effets,$contreindic,$prix);
+            $this->load->model("Model_Medoc");
+            $this->Model_Medoc->creerMedicament($depot,$nom,$code,$compo,$effets,$contreindic,$prix);
         }
 public function modifMedicament()
         {

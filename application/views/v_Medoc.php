@@ -49,7 +49,7 @@
     </head>
     <body>
         <h1> Medicaments </h1>
-       <input id="txtDepot" type="text" placeholder="dépot légal">
+        <input id="txtDepot" type="text" placeholder="dépot légal">
         <input id="txtNom" type="text" placeholder="nom commercial">
         <input id="txtFam" type="text" placeholder="code famille">
         <input id="txtCompo" type="text" placeholder="composition">
@@ -68,7 +68,11 @@
             <br>
         <table>
             <thead>
-                <tr> <th>Depot</th><th>Nom</th><th>Code</th><th>Composition</th><th>Effets</th><th>Contre-indication</th><th>Prix</th></tr>
+                <tr> 
+                        <th>Nom</th>
+                        <th>Composition</th>
+                        <th>Prix</th>
+                </tr>
             </thead>
                 <?php 
                  
@@ -77,12 +81,8 @@
                         ?>
             <tbody>
                 <tr>
-                    <td><?php echo $med->MED_DEPOTLEGAL; ?></td>
                     <td><?php echo $med->MED_NOMCOMMERCIAL;?></td>
-                    <td><?php echo $med->FAM_CODE;?></td>
                     <td><?php echo $med->MED_COMPOSITION;?></td>
-                    <td><?php echo $med->MED_EFFETS;?></td>
-                    <td><?php echo $med->MED_CONTREINDIC;?></td>
                     <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
                     <td><input id="btn2" type="button" value="Modifier"></td>
                 </tr>
