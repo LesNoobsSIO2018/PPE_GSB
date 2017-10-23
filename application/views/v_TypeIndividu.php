@@ -56,19 +56,29 @@
             <input id="sub1" type="button" value ="Modifier"  >
             <input id="sub2" type="button" value ="Inserer">
         </div>
-            <select id="lstTypes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Libellé</th>
+                        <th>code</th>
+                    </tr>
+                </thead>
                 <?php 
-                    foreach($lesIndividus as $types)
+                 
+                    foreach($lesIndividus as $tin)
                         {
-                        $code=0;
                         ?>
-                <option name='optIndividu' value="<?php echo $types->TIN_CODE; ?>"> <?php echo $types->TIN_LIBELLE; ?> </option> 
-                <?php
-                        $code =$types->TIN_CODE + 1; 
-                        }                       
-                ?>
-            </select>
-        <p id="p1" hidden><?php echo $code; ?></p>       
+            <tbody>
+                <tr>
+                    <td><?php echo $tin->TIN_LIBELLE; ?></td>
+                    <td><?php echo $tin->TIN_CODE;?></td>
+                    <td><input id="btn2" type="button" value="Modifier"></td>
+                </tr>
+            </tbody>
+            <?php
+                        }
+            ?>
+            </table>      
         <div id="div1"></div> 
         <div id="div2"></div>  
         
