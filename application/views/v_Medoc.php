@@ -54,17 +54,18 @@
         <input id="txtFam" type="text" placeholder="code famille">
         <input id="txtCompo" type="text" placeholder="composition">
         <input id="txtEffets" type="text" placeholder="effets">
-        <input id="txtContre" type="text">
-        <input id="txtPrix" type="text">
+        <input id="txtContre" type="text" placeholder="contre indication">
+        <input id="txtPrix" type="text" placeholder="prix échantillon">
         <input id="btn1" type="button" value="Inserer">
         <input id="btn2" type="button" value="Modifier">
-        <br>
+            <br>
+            <br>
         <input type="button" value="individu" onClick="location.href='../../index.php/Ctrl_Medoc/getIndividus'">
         <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
         <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
-        
-        <br>
-
+            <br>
+            <br>
+            <br>
         <table>
             <thead>
                 <tr> <th>Depot</th><th>Nom</th><th>Code</th><th>Composition</th><th>Effets</th><th>Contre-indication</th><th>Prix</th></tr>
@@ -83,16 +84,13 @@
                     <td><?php echo $med->MED_EFFETS;?></td>
                     <td><?php echo $med->MED_CONTREINDIC;?></td>
                     <td><?php echo $med->MED_PRIXECHANTILLON;?></td>
+                    <td><input id="btn2" type="button" value="Modifier"></td>
                 </tr>
-
             </tbody>
                  <?php 
-                      
                         }                       
                 ?>
-        
         </table>
-        
         <div id="div1"></div>
         <div id="div2"></div>
     </body>

@@ -14,7 +14,7 @@ class Ctrl_Medoc extends CI_Controller
 public function creerIndividu()
         {
             $data=$_POST['libelle'];    
-            $data2=$_POST['indCode'];
+            $data2=$_POST['code'];
             $this->load->model("Model_TypeIndividu");
             $this->Model_TypeIndividu->creerIndividu($data2,$data);
             $this->creerIndividus();

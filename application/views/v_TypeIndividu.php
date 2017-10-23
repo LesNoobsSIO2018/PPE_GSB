@@ -57,7 +57,7 @@
         </div>
         
         
-            <select id="lstTypes" multiple=''>
+            <select id="lstTypes">
                 <?php 
                     foreach($lesIndividus as $types)
                         {
@@ -65,7 +65,7 @@
                         ?>
                 <option name='optIndividu' value="<?php echo $types->TIN_CODE; ?>"> <?php echo $types->TIN_LIBELLE; ?> </option> 
                 <?php
-                      $indcode =$types->TIN_CODE + 1; 
+                        $code =$types->TIN_CODE + 1; 
                         }                       
                 ?>
             </select>
