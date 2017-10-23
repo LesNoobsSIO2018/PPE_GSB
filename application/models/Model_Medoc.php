@@ -11,7 +11,7 @@ class Model_Medoc extends CI_Model
             }
     public function modifMedicament($depot,$nom,$famille,$compo,$effets,$contreindic,$prix)
             {
-                $sql = $this->db->query("UPDATE medicament SET MED_DEPOTLEGAL='".$depot."',MED_NOMCOMMERCIAL='".$nom."',FAM_CODE='".$famille."',MED_COMPOSITION='".$compo."',MED_EFFETS='".$effets."',MED_CONTREINDIC='".$contreindic."',MED_PRIXECHANTILLON='".$prix."'");
+                $sql = $this->db->query("UPDATE medicament SET MED_DEPOTLEGAL='".$depot."',MED_NOMCOMMERCIAL='".$nom."',FAM_CODE='".$code."',MED_COMPOSITION='".$compo."',MED_EFFETS='".$effets."',MED_CONTREINDIC='".$contreindic."',MED_PRIXECHANTILLON='".$prix."'");
             }
 }
 
