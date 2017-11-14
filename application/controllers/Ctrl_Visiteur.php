@@ -49,6 +49,7 @@ class Ctrl_Visiteur extends CI_Controller{
         $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
         $this->load->view("v_ModifierVisiteur",$data);     
           }
+      
         public function ajouterRegion(){
         $this->load->model("Model_Region");
         
@@ -77,12 +78,33 @@ class Ctrl_Visiteur extends CI_Controller{
           }
 
 
-          public function modifierRegion(){
+         public function modifierRegion(){
         $this->load->model("Model_Region");
         $data["lesRegions"]=$this->Model_Region->GetAllRegion();
         $this->load->view("v_ModifierRegion", $data);
-          }  
+        }  
           
-     
+         public function modifierVisiteurMod(){
+        $this->load->model("Model_Visiteur"); 
+        $this->load->model("Model_Region"); 
+        $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
+        $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
+        $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
+        $this->load->view("v_ModifierVisiteurMod",$data);     
+          }
+        public function modVisiteur(){
+        $matricule = $this->uri->segment(3);
+        $this->load->model("Model_Visiteur"); 
+        $this->load->model("Model_Region"); 
+        $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
+        $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
+        $data['unVisiteur'] = $this->Model_Visiteur->unMatricule($matricule);
+        $this->load->view("v_ModifierVisiteurMod",$data);    
         }
+        public function modifierRegionMod(){
+        $this->load->model("Model_Region");
+        $data["lesRegions"]=$this->Model_Region->GetAllRegion();
+        $this->load->view("v_ModifierRegionMod", $data);
+        }
+}
 
