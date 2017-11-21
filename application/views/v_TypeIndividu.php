@@ -1,22 +1,18 @@
 <html>
     <head>
-        <title>MEDICATOR</title>
+        <title>Type Individu</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src = "<?php echo base_url();?>JS/lesFonctions.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
-        
-        
         <script>
              $(
                 function()
-                {
-                    
+                { 
                     $('#lstTypes').change
                     (                           
                             function()
-                           {
-                                
+                           {  
                                 $('#txt1').val($('#lstTypes option:selected').text());
                            }
                     );    
@@ -31,9 +27,7 @@
                     (
                         function()
                         {  
-                            
-                          creerIndividu();
-                            
+                          creerIndividu();  
                         }
                     );
                 }
@@ -52,7 +46,8 @@
             <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
         <div>
             <p>Saisir un type d'individus :</p>
-            <input id="txt1" type="text">
+            <input id="txt1" type="text" placeholder="libellé">
+            <input id="txt2" type="text" placeholder="code">
             <input id="sub1" type="button" value ="Modifier"  >
             <input id="sub2" type="button" value ="Inserer">
         </div>
@@ -63,8 +58,7 @@
                         <th>code</th>
                     </tr>
                 </thead>
-                <?php 
-                 
+                <?php
                     foreach($lesIndividus as $tin)
                         {
                         ?>

@@ -1,7 +1,6 @@
 <?php
 class Model_TypeIndividu extends CI_Model
 {
-  
     public function getIndividus()
     {
      $sql = $this->db->query("Select * from type_individu");   
@@ -10,7 +9,6 @@ class Model_TypeIndividu extends CI_Model
     public function creerIndividu($data2,$data)
             {
             $sql = $this->db->query("INSERT INTO type_individu values('".$data2."','".$data."')");  
-            
             }
     public function modifIndividu($data,$data2)
             {

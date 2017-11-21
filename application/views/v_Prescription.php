@@ -32,14 +32,14 @@
                 </select>
                 <select name="lstTypeIndividu">
                     <?php
-                        foreach($lesIndividus as $types){
+                        foreach($lesIndividus as $tin){
                     ?>
                     <option id="1">
                         <?php echo $tin->TIN_LIBELLE;?>
                     </option>
                         <?php } ?>
                 </select>
-                <select name="dosage">
+                <select name="lstdosage">
                     <?php
                         foreach($lesDosages as $dos){
                     ?>

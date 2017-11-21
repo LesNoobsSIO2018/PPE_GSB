@@ -14,11 +14,8 @@
                         function()
                         {  
                             creerMedicament();
-                          
                         }
                     ); 
-                       
-   
                         $('tr').click
                         (
                                 function()
@@ -38,12 +35,9 @@
                         {  
                            // alert($('#txtEffets').val());
                             modifMedicament();
-                          
                         }
-                    ); 
-                  
+                    );
                 }
-                
                );
         </script>
     </head>
@@ -56,7 +50,8 @@
         <input id="txtEffets" type="text" placeholder="effets">
         <input id="txtContre" type="text" placeholder="contre indication">
         <input id="txtPrix" type="text" placeholder="prix échantillon">
-        <input id="btn1" type="button" value="Inserer">
+        <input id="btn1" type="button" value="Insérer">
+        <input id="btn2" type="button" value="modifier">
             <br>
             <br>
         <input type="button" value="individu" onClick="location.href='../../index.php/Ctrl_Medoc/getIndividus'">
@@ -78,7 +73,6 @@
                 </tr>
             </thead>
                 <?php 
-                 
                     foreach($lesMedicaments as $med)
                         {
                         ?>
