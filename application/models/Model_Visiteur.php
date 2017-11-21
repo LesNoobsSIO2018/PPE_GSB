@@ -18,10 +18,10 @@ class Model_Visiteur extends CI_Model{
         $this->db->where('VIS_MATRICULE',$matricule);
         $query = $this->db->get('visiteur');
         return $query->result();
-        
+       
     }
     public function editVisiteur($Nom,  $Prenom, $Adresse, $Cp, $Ville, $DateEmb, $CodeSecteur, $CodeLabo, $hidden_id){
-       $this->db->query("UPDATE `visiteur` SET `VIS_NOM`='".$Nom."', `Vis_PRENOM`='".$Prenom."', `VIS_ADRESSE`='".$Adresse."', `VIS_CP`='".$Cp."', `VIS_VILLE`='".$Ville."', `VIS_DATEEMBAUCHE`='".$DateEmb."', `SEC_CODE`='".$CodeSecteur."', `LAB_CODE`='".$CodeLabo."' WHERE `visiteur`.`VIS_MATRICULE` = '".$hidden_id."'");
+    $this->db->query("UPDATE `visiteur` SET `VIS_NOM`='".$Nom."', `Vis_PRENOM`='".$Prenom."', `VIS_ADRESSE`='".$Adresse."', `VIS_CP`='".$Cp."', `VIS_VILLE`='".$Ville."', `VIS_DATEEMBAUCHE`='".$DateEmb."', `SEC_CODE`='".$CodeSecteur."', `LAB_CODE`='".$CodeLabo."' WHERE `visiteur`.`VIS_MATRICULE` = '".$hidden_id."'");
   
     }
 
