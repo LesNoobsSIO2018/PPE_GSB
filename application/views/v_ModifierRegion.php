@@ -36,7 +36,7 @@
                    <td><?php echo $reg->SEC_CODE;?></td>
                    <td><?php echo $reg->REG_NOM;?></td>
 
-                   <td><br><input type="submit" class="btn btn-info" name="subValider" value="Choisir" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modifierRegionMod/'">           
+                   <td><br><input type="submit" class="btn btn-info" name="subValider" value="Choisir" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modifierRegionMod/'"><?php echo $reg->REG_CODE; ?>">              
                </tr>
           <?php   
             }
