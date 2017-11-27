@@ -19,7 +19,7 @@
            
                 
             <h4><b>Veuillez choisir une région pour pouvoir la modifier</b></h4>    
-            <?php echo form_open('Ctrl_Visiteur/modifierRegion/');  ?>
+            <?php echo form_open('Ctrl_Visiteur/modRegion/');  ?>
             
            <table class="table">
                <tr>
@@ -36,7 +36,7 @@
                    <td><?php echo $reg->SEC_CODE;?></td>
                    <td><?php echo $reg->REG_NOM;?></td>
 
-                   <td><br><input type="submit" class="btn btn-info" name="subValider" value="Choisir" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modifierRegionMod/'"><?php echo $reg->REG_CODE; ?>">              
+                   <td><br><input type="button" class="btn btn-info" name="subValider" value="Choisir" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modRegion/<?php echo $reg->REG_CODE; ?>'"/>              
                </tr>
           <?php   
             }
