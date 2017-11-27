@@ -18,19 +18,19 @@
             
                 
                 
-            <?php echo form_open('Ctrl_Visiteur/modVisiteur');  ?>
+            <?php echo form_open('Ctrl_Visiteur/modifierVisiteurMod');  ?>
             
             
             <h4><b>Veuillez saisir les coordonnées du visiteurs</b></h4>
-            <br><label>Matricule: </label><input type="text" name="VIS_MATRICULE" value="<?php echo $matricule[0]->VIS_MATRICULE; ?>" />
-            <br><label>Nom: </label><input type="text" name="VIS_NOM" value="<?php echo $matricule[0]->VIS_NOM; ?>" />
-            <br><label>Prénom: </label><input type="text" name="Vis_PRENOM" value="<?php echo $matricule[0]->Vis_PRENOM; ?>" />
-            <br><label>Adresse: </label><input type="text" name="VIS_ADRESSE" value="<?php echo $matricule[0]->VIS_ADRESSE; ?>" />
-            <br><label>CP: </label><input type="text" name="VIS_CP" value="<?php echo $matricule[0]->VIS_CP; ?>" />
-            <br><label>Ville: </label><input type="text" name="VIS_VILLE" value="<?php echo $matricule[0]->VIS_VILLE; ?>" />
-            <br><label>Date d'embauche: </label><input type="date" name="VIS_DATEEMBAUCHE" value="<?php echo $matricule[0]->VIS_DATEEMBAUCHE; ?>" >
+            <br><label>Matricule: </label><input type="text" name="VIS_MATRICULE" value="<?php echo $unMatricule[0]->VIS_MATRICULE; ?>" />
+            <br><label>Nom: </label><input type="text" name="VIS_NOM" value="<?php echo $unMatricule[0]->VIS_NOM; ?>" />
+            <br><label>Prénom: </label><input type="text" name="Vis_PRENOM" value="<?php echo $unMatricule[0]->Vis_PRENOM; ?>" />
+            <br><label>Adresse: </label><input type="text" name="VIS_ADRESSE" value="<?php echo $unMatricule[0]->VIS_ADRESSE; ?>" />
+            <br><label>CP: </label><input type="text" name="VIS_CP" value="<?php echo $unMatricule[0]->VIS_CP; ?>" />
+            <br><label>Ville: </label><input type="text" name="VIS_VILLE" value="<?php echo $unMatricule[0]->VIS_VILLE; ?>" />
+            <br><label>Date d'embauche: </label><input type="date" name="VIS_DATEEMBAUCHE" value="<?php echo $unMatricule[0]->VIS_DATEEMBAUCHE; ?>" >
             <br><label>Code secteur: </label>
-            <select name="SEC_CODE" id="lstSec" value="<?php echo $matricule[0]->SEC_CODE; ?>">
+            <select name="SEC_CODE" id="lstSec" value="<?php echo $unMatricule[0]->SEC_CODE; ?>">
                 <?php foreach ($lesSecteurs as $sec){ 
                     echo "<option value='".$sec->SEC_CODE."'>".$sec->SEC_LIBELLE."</option>";
                 }
@@ -38,12 +38,13 @@
                 
             </select>
             <br><label>Libellé laboratoire: </label>
-            <select name="LAB_CODE" id="lstLab" value="<?php echo $matricule[0]->LAB_CODE; ?>" >
+            <select name="LAB_CODE" id="lstLab" value="<?php echo $unMatricule[0]->LAB_CODE; ?>" >
                 <?php foreach ($lesLabos as $l){ 
                     echo "<option value='".$l->LAB_CODE."'>".$l->LAB_NOM."</option>";
                 }
                     ?>
-            <br><input type="submit" class="btn btn-info" name="subValider" value="Modifier le visiteur" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modifierVisiteurMod'/><?php echo $vis->VIS_MATRICULE; ?>">
+                <input type="hidden" name ="hidden_id" value="<?php echo $unMatricule[0]->VIS_MATRICULE; ?>">
+            <br><br><input type="submit" class="btn btn-info" name="subValider" value="Modifier le visiteur">      
                 
 
 <?php echo form_close();  ?>

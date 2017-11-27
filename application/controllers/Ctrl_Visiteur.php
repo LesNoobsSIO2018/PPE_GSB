@@ -87,18 +87,42 @@ class Ctrl_Visiteur extends CI_Controller{
          public function modifierVisiteurMod(){
         $this->load->model("Model_Visiteur"); 
         $this->load->model("Model_Region"); 
-        $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
+//        $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
         $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
         $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
         $this->load->view("v_ModifierVisiteurMod",$data);     
+            $data = array( 
+                      'hidden_id'    => $this->input->post('hidden_id'),
+                      'VIS_NOM'    => $this->input->post('VIS_NOM') ,
+                      'Vis_PRENOM'    => $this->input->post('Vis_PRENOM'),
+                      'VIS_ADRESSE'    => $this->input->post('VIS_ADRESSE'),
+                      'VIS_CP'    => $this->input->post('VIS_CP'),
+                      'VIS_VILLE'    => $this->input->post('VIS_VILLE'),
+                      'VIS_DATEEMBAUCHE'    => $this->input->post('VIS_DATEEMBAUCHE'),
+                      'SEC_CODE'    => $this->input->post('SEC_CODE'),
+                      'LAB_CODE'    => $this->input->post('LAB_CODE'),
+                        ); 
+                      $hidden_id = $data['hidden_id'];
+                      $Nom = $data['VIS_NOM'];
+                      $Prenom = $data['Vis_PRENOM'];
+                      $Adresse = $data['VIS_ADRESSE'];
+                      $Cp = $data['VIS_CP'];
+                      $Ville = $data['VIS_VILLE'];
+                      $DateEmb = $data['VIS_DATEEMBAUCHE'];
+                      $CodeSecteur = $data['SEC_CODE'];
+                      $CodeLabo = $data['LAB_CODE'];
+        $this->Model_Visiteur->modifierVisiteur($hidden_id,$Nom, $Prenom,$Adresse, $Cp, $Ville, $DateEmb, $CodeSecteur, $CodeLabo);
+        $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
+        $this->modifierVisiteur();
           }
+          
         public function modVisiteur(){
         $matricule = $this->uri->segment(3);
         $this->load->model("Model_Visiteur"); 
         $this->load->model("Model_Region"); 
         $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
         $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
-        $data['unVisiteur'] = $this->Model_Visiteur->unMatricule($matricule);
+        $data['unMatricule'] = $this->Model_Visiteur->unMatricule($matricule);
         $this->load->view("v_ModifierVisiteurMod",$data);    
         }
         public function modRegion(){
