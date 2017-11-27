@@ -105,15 +105,26 @@ class Ctrl_Visiteur extends CI_Controller{
         $region = $this->uri->segment(3); 
         $this->load->model("Model_Region"); 
         $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
-        $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
-        $data['uneRegion'] = $this->Model_Visiteur->uneRegion($region);
+        $data['uneRegion'] = $this->Model_Region->uneRegion($region);
         $this->load->view("v_ModifierRegionMod",$data); 
             
         }
         public function modifierRegionMod(){
         $this->load->model("Model_Region");
+        
+         $data = array( 
+                      'hidden_id'    => $this->input->post('hidden_id'),
+                      'REG_NOM'    => $this->input->post('REG_NOM') ,
+                      'SEC_CODE'    => $this->input->post('SEC_CODE')
+                        ); 
+                      $id = $data['hidden_id'];
+                      $nom = $data['REG_NOM'];
+                      $sec = $data['SEC_CODE'];
+        
+        $this->Model_Region->modifierRegion($id,$nom, $sec);
         $data["lesRegions"]=$this->Model_Region->GetAllRegion();
-        $this->load->view("v_ModifierRegionMod", $data);
+        $this->modifierRegion();
+      ///  $this->load->view("v_ModifierRegionMod", $data);
         }
         public function statistique(){
         $this->load->view("v_Stats");
