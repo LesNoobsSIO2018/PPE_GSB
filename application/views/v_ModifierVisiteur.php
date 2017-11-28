@@ -43,6 +43,7 @@
                    <td><?php echo $vis->VIS_DATEEMBAUCHE;?></td>
                    <td><?php echo $vis->SEC_CODE;?></td>
                    <td><?php echo $vis->LAB_CODE;?></td>
+                   <td><?php echo $vis->SEC_NOM;?></td>
                    
                    <td><input type="button" class="btn btn-info" name="subValider" value="Choisir" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modVisiteur/<?php echo $vis->VIS_MATRICULE; ?>'"/>           
                </tr>

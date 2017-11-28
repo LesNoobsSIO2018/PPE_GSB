@@ -36,6 +36,7 @@ class Ctrl_Visiteur extends CI_Controller{
                   'VIS_VILLE' =>$this->input->post('VIS_VILLE'),
                   'VIS_DATEEMBAUCHE' =>$this->input->post('VIS_DATEEMBAUCHE'),
                   'SEC_CODE' =>$this->input->post('SEC_CODE'),
+                  'REG_NOM' =>$this->input->post('REG_NOM'),
                   'LAB_CODE' =>$this->input->post('LAB_CODE')
                       );
 //                      var_dump($data);
@@ -90,8 +91,7 @@ class Ctrl_Visiteur extends CI_Controller{
 //        $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
         $data["lesSecteurs"] = $this->Model_Region->GetSecteur();
         $data["lesLabos"] = $this->Model_Visiteur->GetLabo();
-        $this->load->view("v_ModifierVisiteurMod",$data);     
-            $data = array( 
+        $data = array( 
                       'hidden_id'    => $this->input->post('hidden_id'),
                       'VIS_NOM'    => $this->input->post('VIS_NOM') ,
                       'Vis_PRENOM'    => $this->input->post('Vis_PRENOM'),
