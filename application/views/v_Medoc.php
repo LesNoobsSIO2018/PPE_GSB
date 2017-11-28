@@ -56,8 +56,8 @@
             <br>
         <input type="button" value="individu" onClick="location.href='../../index.php/Ctrl_Medoc/getIndividus'">
         <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
+        <input type="button" value="perturbateurs" onClick="location.href='../../index.php/Ctrl_Medoc/getDeconseil'">
         <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
-            <br>
             <br>
             <br>
         <table>
