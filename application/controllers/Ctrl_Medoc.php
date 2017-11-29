@@ -30,6 +30,7 @@ class Ctrl_Medoc extends CI_Controller
         {
             $this->load->model("Model_Medoc");
             $data['lesMedicaments'] = $this->Model_Medoc->getAllMedicaments();
+            $data['lesFamilles']=$this->Model_Medoc->getFamille();
             $this->load->view("v_Medoc",$data);
         }
         public function creerMedicament()
@@ -54,7 +55,7 @@ class Ctrl_Medoc extends CI_Controller
             $contreindic = $_POST['contre'];
             $prix = $_POST['prix'];
             $this->load->model("Model_MedicamentPC");
-            $this->Model_MedicamentPC->modifMedicament($depot,$nom,$code,$compo,$effets,$contreindic,$prix);
+            $this->Model_Medoc->modifMedicament($depot,$nom,$code,$compo,$effets,$contreindic,$prix);
         }
         public function getPrescription()
         {
@@ -70,7 +71,12 @@ class Ctrl_Medoc extends CI_Controller
             $PRE_POSOLOGIE=$_POST['posologie'];
             $this->load->model("Model_Prescription");
             $this->Model_Prescription>creerPrescription($lbl,$code);
-        }        
+        }   
+        public function getDeconseil(){
+            $this->load->model("Model_Deconseil");
+            $data['lesDeconseils']=$this->Model_Deconseil->getDeconseil();
+            $this->load->view("v_deconseil",$data);
+        }
 }
 
 
