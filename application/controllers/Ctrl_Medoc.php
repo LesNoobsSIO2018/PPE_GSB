@@ -61,6 +61,9 @@ class Ctrl_Medoc extends CI_Controller
         {
             $this->load->model("Model_Prescription");
             $data['lesPrescriptions']=$this->Model_Prescription->getPrescription();
+            $data['lesMedicaments']=$this->Model_Prescription->getMedicament();
+            $data['lesIndividus']=$this->Model_Prescription->getIndividu();
+            $data['lesDosages']=$this->Model_Prescription->getDosage();
             $this->load->view("v_Prescription",$data);
         }
         public function creerPrescription()

@@ -24,15 +24,15 @@
            
                 <select name="lstMedoc">
                     <?php
-                        foreach($lesMedicaments as $med){
-                            echo "<option value='".$med->MED_DEPOTLEGAL."'>".$med->MED_NOMCOMMERCIAL."</option>";
+                        foreach($lesMedicaments as $MED){
+                            echo "<option value='".$MED->MED_NOMCOMMERCIAL."'>".$MED->MED_DEPOTLEGAL."</option>";
                         } 
                      ?>
                 </select>
                 <select name="lstTypeIndividu">
                     <?php
-                        foreach($lesIndividus as $tin){
-                            echo "<option value='".$tin->TIN_LIBELLE."'>".$tin->TIN_LIBELLE."</option>";
+                        foreach($lesIndividus as $TIN){
+                            echo "<option value='".$TIN->TIN_CODE."'>".$TIN->TIN_LIBELLE."</option>";
                          }
                     ?>
                 </select>
@@ -59,8 +59,8 @@
                 ?>
                 <tbody>
                     <tr>
-                        <td><?php echo $med->MED_DEPOTLEGAL; ?></td>
-                        <td><?php echo $tin->TIN_CODE;?></td>
+                        <td><?php echo $MED->MED_DEPOTLEGAL; ?></td>
+                        <td><?php echo $TIN->TIN_CODE;?></td>
                         <td><?php echo $dos->DOS_CODE;?></td>
                         <td><?php echo $pre->PRE_POSOLOGIE;?></td>
                         <td><input id="btn2" type="button" value="Modifier"></td>
