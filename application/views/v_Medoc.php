@@ -22,7 +22,7 @@
                         {
                             $('#txtDepot').val($(this).children(0).eq(0).text());
                             $('#txtNom').val($(this).children(0).eq(1).text());
-                            $('#txtFam').val($(this).children(0).eq(2).text());
+                            $('#txtCode').val($(this).children(0).eq(2).val());
                             $('#txtCompo').val($(this).children(0).eq(3).text());
                             $('#txtEffets').val($(this).children(0).eq(4).text());
                             $('#txtContre').val($(this).children(0).eq(5).text());
@@ -45,7 +45,13 @@
         <h1> Medicaments </h1>
         <input id="txtDepot" type="text" placeholder="dépot légal">
         <input id="txtNom" type="text" placeholder="nom commercial">
-        <input id="txtFam" type="text" placeholder="code famille">
+        <select name="code" id="lstCode">
+            <?php
+                foreach($lesFamilles as $FAM){
+                    echo "<option value='".$FAM->FAM_LIBELLE."'>".$FAM->FAM_CODE."</option>";
+                }
+            ?>
+        </select>
         <input id="txtCompo" type="text" placeholder="composition">
         <input id="txtEffets" type="text" placeholder="effets">
         <input id="txtContre" type="text" placeholder="contre indication">

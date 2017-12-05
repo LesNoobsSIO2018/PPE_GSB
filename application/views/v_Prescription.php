@@ -14,39 +14,61 @@
                 <input type="button" value="modifier">
                     <br>
                     <br>
-                <input type="submit" value="Médicaments" onClick="location.href='../../index.php/Ctrl_Medoc/getAllMedicament'">
-                <input type="button" value="Individus" onClick="location.href='../../index.php/Ctrl_Medoc/getAllIndividu'">
+                <input type="submit" value="Médicaments" onClick="location.href='<?php echo base_url();?>index.php/Ctrl_Medoc/getAllMedicaments'">
+                <input type="button" value="Individus" onClick="location.href='<?php echo base_url();?>index.php/Ctrl_Medoc/getIndividus'">
+                <input type="button" value="perturbateurs" onClick="location.href='<?php echo base_url();?>index.php/Ctrl_Medoc/getDeconseil'">
                 <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
                     <br>
                     <br>
                     <br>
-            <h2>Liste des prescriptions existantes</h2>
+           
                 <select name="lstMedoc">
                     <?php
                         foreach($lesMedicaments as $med){
-                    ?>
-                    <option>
-                        <?php echo $med->MED_NOMCOMMERCIAL;?>
-                    </option>
-                        <?php } ?>
+                            echo "<option value='".$med->MED_DEPOTLEGAL."'>".$med->MED_NOMCOMMERCIAL."</option>";
+                        } 
+                     ?>
                 </select>
                 <select name="lstTypeIndividu">
                     <?php
                         foreach($lesIndividus as $tin){
+                            echo "<option value='".$tin->TIN_LIBELLE."'>".$tin->TIN_LIBELLE."</option>";
+                         }
                     ?>
-                    <option id="1">
-                        <?php echo $tin->TIN_LIBELLE;?>
-                    </option>
-                        <?php } ?>
                 </select>
                 <select name="lstdosage">
                     <?php
                         foreach($lesDosages as $dos){
-                    ?>
-                    <option value="1">
-                        <?php echo $dos->DOS_QUANTITE;?>
-                    </option>
-                        <?php } ?> 
+                            echo "<option value='".$dos->DOS_QUANTITE."'>".$dos->DOS_QUANTITE."</option>";
+                        } 
+                    ?> 
                 </select>
+                <h2>Liste des prescriptions existantes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom Médicament</th>
+                        <th>Code Famille</th>
+                        <th>Dosage</th>
+                        <th>Posologie</th>
+                    </tr>
+                </thead>
+                <?php
+                    foreach($lesPrescriptions as $pre)
+                    {
+                ?>
+                <tbody>
+                    <tr>
+                        <td><?php echo $med->MED_DEPOTLEGAL; ?></td>
+                        <td><?php echo $tin->TIN_CODE;?></td>
+                        <td><?php echo $dos->DOS_CODE;?></td>
+                        <td><?php echo $pre->PRE_POSOLOGIE;?></td>
+                        <td><input id="btn2" type="button" value="Modifier"></td>
+                    </tr>
+                </tbody>
+                <?php
+                    }
+                ?>
+            </table>
         </body>
 </html>

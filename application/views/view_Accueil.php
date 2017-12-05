@@ -22,6 +22,10 @@
                         <h4>Gestion des prescriptions</h4>
                             <input type="button" value="gestion des prescriptions" onClick="location.href='<?php echo base_url();?>index.php/Ctrl_Medoc/getPrescription'">
                     </td>
+                    <td>
+                        <h4>Visualisation des médicaments déconseillé</h4>
+                            <input type="button" value="visualisation des perturbateurs" onClick="location.href='<?php echo base_url();?>index.php/Ctrl_Medoc/getDeconseil'">
+                    </td>
                 </tr>
             </table>
         </body>

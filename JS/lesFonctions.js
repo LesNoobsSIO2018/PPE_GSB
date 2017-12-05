@@ -5,7 +5,7 @@ function creerIndividu()
             {
                 type:"post",
                 url:"creerIndividu",
-                data:"libelle="+$('#txt1').val()+"&code="+$('#p1').text(),
+                data:"libelle="+$('#txt1').val()+"&code="+$('#txt2').val(),
                 success:function(data)
                 {
                     $('#divTypesIndividus').empty();
@@ -13,7 +13,7 @@ function creerIndividu()
                 },
                 error:function()
                 {
-                   alert('erreur pour créer');
+                   alert('rechargez la page');
                 }
             }
                  
@@ -26,7 +26,7 @@ function modifIndividu()
         {
                 type:"post",
                 url:"modifIndividu",
-                data: "nvlibelle="+$('#txt1').val()+"&code="+$('#lstTypes option:selected').val(),
+                data: "nvlibelle="+$('#txt1').val()+"&code="+$('#txt2').val(),
                 success:function(data)
                 {
                     $('#div2').empty();
@@ -46,7 +46,7 @@ function creerMedicament()
             {
                 type:"post",
                 url:"creerMedicament",
-                data:"depot="+$('#txtDepot').val()+"&nom="+$('#txtNom').val()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').val()+"&effets="+$('#txtEffets').val()+"&contre="+$('#txtContre').val()+"&prix="+$('#txtPrix').val(),
+                data:"depot="+$('#txtDepot').text()+"&nom="+$('#txtNom').text()+"&code="+$('#txtCode').val()+"&composition="+$('#txtCompo').text()+"&effets="+$('#txtEffets').text()+"&contreindic="+$('#txtContre').text()+"&prix="+$('#txtPrix').text(),
                 success:function(data)
                 {
                     $('#div1').empty();
@@ -66,7 +66,7 @@ function modifMedicament()
         {
                 type:"post",
                 url:"modifMedicament",
-                data: "depot="+$('#txtDepot').val()+"&nom="+$('#txtNom').val()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').val()+"&effets="+$('#txtEffets').val()+"&contre="+$('#txtContre').val()+"&prix="+$('#txtPrix').val(),
+                data: "depot="+$('#txtDepot').text()+"&nom="+$('#txtNom').text()+"&famille="+$('#txtFam').val()+"&composition="+$('#txtCompo').text()+"&effets="+$('#txtEffets').text()+"&contre="+$('#txtContre').text()+"&prix="+$('#txtPrix').text(),
                 success:function(data)
                 {
                     $('#div2').empty();

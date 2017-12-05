@@ -13,7 +13,7 @@
                     (                           
                             function()
                            {  
-                                $('#txt1').val($('#lstTypes option:selected').text());
+                                $('#txt1').val($('#lstTypes option:selected').text())       ;
                            }
                     );    
                     $('#sub1').click
@@ -27,7 +27,9 @@
                     (
                         function()
                         {  
-                          creerIndividu();  
+                          creerIndividu(); 
+//                          alert($('#txt1').val());
+//                          alert($('#txt2').val());
                         }
                     );
                 }
@@ -43,6 +45,7 @@
                 <br>
             <input type="button" value="médicaments" onClick="location.href='../../index.php/Ctrl_Medoc/getAllMedicaments'">
             <input type="button" value="prescription" onClick="location.href='../../index.php/Ctrl_Medoc/getPrescription'">
+            <input type="button" value="perturbateurs" onClick="location.href='../../index.php/Ctrl_Medoc/getDeconseil'">
             <input type="button" value="Accueil" onClick="location.href='../../../PPE'">
         <div>
             <p>Saisir un type d'individus :</p>
