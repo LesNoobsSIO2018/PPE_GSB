@@ -151,8 +151,10 @@ class Ctrl_Visiteur extends CI_Controller{
       ///  $this->load->view("v_ModifierRegionMod", $data);
         }
         public function statistique(){
+            
             $this->load->model("Model_Stats");
             $data["lesStats"]=$this->Model_Stats->getAllRegionDeSecteur();
+            $data["lesStats2"]=$this->Model_Stats->getAllVisiteurDeRegion();
             
             
             $this->load->view("v_Stats",$data); 
