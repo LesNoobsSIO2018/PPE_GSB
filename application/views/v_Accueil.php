@@ -19,7 +19,11 @@
         <h1> Gestion des régions </h1>
         <input id="btnAjouterRegion"class="btn btn-primary" type="button" value="Ajouter une région" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/ajouterRegion'"/>
         <input id="btnModifierRegion"class="btn btn-danger" type="button" value="Modifier une région" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/modifierRegion'"/>
+        <h1>Inserer un visiteur dans une région</h1>
+        <input type="button" value="Go"class="btn btn-primary" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/InsererVisiteurRegion'">
         <h1> Statistiques </h1>
         <input id="btnAjouterRegion"class="btn btn-primary" type="button" value="Go" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Visiteur/statistique'"/>
+        
+        
     </body>
 </html>

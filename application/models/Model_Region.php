@@ -29,4 +29,12 @@ class Model_Region extends CI_Model{
      public function modifierRegion($id,$nom, $sec){
         $this->db->query("UPDATE region SET `SEC_CODE` = '".$sec."', `REG_NOM` = '".$nom."' where `region`.`REG_CODE` = '".$id."'");
     }
+    public function getAllRegions(){
+        $sql = $this->db->query("select * from region ");
+       return $sql->result();
+    }
+    
+
+
+    
 }

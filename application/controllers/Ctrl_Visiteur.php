@@ -160,6 +160,24 @@ class Ctrl_Visiteur extends CI_Controller{
             $this->load->view("v_Stats",$data); 
             
         }
+        public function InsererVisiteurRegion() {
+            $this->load->model("Model_Region");
+            $this->load->model("Model_Visiteur");
+            $data["lesRegions"] = $this -> Model_Region->getAllRegions();
+            $data["lesVisiteurs"] = $this->Model_Visiteur->getAllVisiteurs();
+            $this->load->view("v_RegionVisiteur", $data);
+            
+        }
+        
+        public function ajoutVisReg(){
+            $this->load->model('Model_Visiteur');
+            $region = $_POST['idRegion'];
+            $visiteur = $_POST['idVisiteur'];
+            $date = $_POST['idDate'];
+            $role = $_POST['idRole'];
+            $this->Model_Visiteur->insereRegVis($region, $visiteur, $date, $role);
+            $this->InsererVisiteurRegion();
+        }
         
         
         
