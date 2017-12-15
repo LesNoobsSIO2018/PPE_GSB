@@ -31,7 +31,7 @@
                         function()
                         {  
                            // alert($('#txtEffets').val());
-                            modifMedicament();
+                            modifPrescription();
                         }
                     );
                 }
