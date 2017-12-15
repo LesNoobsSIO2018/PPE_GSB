@@ -20,10 +20,10 @@
                         (
                                 function()
                         {
-                            $('#txtDepot').val($(this).children(0).eq(0).val());
-                            $('#txtNom').val($(this).children(0).eq(1).val());
-                            $('#txtCode').val($(this).children(0).eq(2).val());
-                            $('#txtCompo').val($(this).children(0).eq(3).text());
+                            $('#txtlstMedoc').val($(this).children(0).eq(0).val());
+                            $('#txtlstTypeIndividu').val($(this).children(0).eq(1).val());
+                            $('#txtlstdosage').val($(this).children(0).eq(2).val());
+                            $('#txtPRE_POSOLOGIE').val($(this).children(0).eq(3).text());
                         }
                         );
                         $('#btn2').click
