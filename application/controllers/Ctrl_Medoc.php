@@ -66,15 +66,24 @@ class Ctrl_Medoc extends CI_Controller
             $data['lesDosages']=$this->Model_Prescription->getDosage();
             $this->load->view("v_Prescription",$data);
         }
-        public function creerPrescription()
+        public function modifPrescription()
         {
             $MED_DEPOTLEGAL=$_POST['medicament'];
             $TIN_CODE=$_POST['individu'];
             $DOS_CODE=$_POST['dosage'];
             $PRE_POSOLOGIE=$_POST['posologie'];
             $this->load->model("Model_Prescription");
-            $this->Model_Prescription>creerPrescription($lbl,$code);
+            $this->Model_Prescription>modifPrescription($MED_DEPOTLEGAL,$TIN_LIBELLE,$DOS_LIBELLE,$PRE_POSOLOGIE);
         }   
+         public function creerPrescription()
+        {
+            $MED_DEPOTLEGAL=$_POST['medicament'];
+            $TIN_CODE=$_POST['individu'];
+            $DOS_CODE=$_POST['dosage'];
+            $PRE_POSOLOGIE=$_POST['posologie'];
+            $this->load->model("Model_Prescription");
+            $this->Model_Prescription>creerPrescription($MED_DEPOTLEGAL,$TIN_LIBELLE,$DOS_LIBELLE,$PRE_POSOLOGIE);
+        } 
         public function getDeconseil(){
             $this->load->model("Model_Deconseil");
             $data['lesDeconseils']=$this->Model_Deconseil->getDeconseil();
