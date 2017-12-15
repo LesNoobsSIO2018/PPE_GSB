@@ -68,7 +68,7 @@ class Ctrl_Medoc extends CI_Controller
         }
         public function creerPrescription()
         {
-            $MED_DEPOTLEGAL=$_POST['nom'];
+            $MED_DEPOTLEGAL=$_POST['medicament'];
             $TIN_CODE=$_POST['individu'];
             $DOS_CODE=$_POST['dosage'];
             $PRE_POSOLOGIE=$_POST['posologie'];

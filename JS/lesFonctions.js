@@ -87,7 +87,7 @@ function creerPrescription()
             {
                 type:"post",
                 url:"creerPrescription",
-                data:"depot="+$('#lstMedoc').val()+"&nom="+$('#lstTypeIndividu').val()+"&code="+$('#lstdosage').val()+"&composition="+$('#txtPRE_POSOLOGIE').text(),
+                data:"medicament="+$('#lstMedoc').val()+"&individus="+$('#lstTypeIndividu').val()+"&dosage="+$('#lstdosage').val()+"&posologie="+$('#txtPRE_POSOLOGIE').text(),
                 success:function(data)
                 {
                     $('#div1').empty();
@@ -98,5 +98,25 @@ function creerPrescription()
                     alert('erreur');
                 }
             }
+    );
+}
+function modifPrescription()
+{
+    $.ajax
+    (
+        {
+                type:"post",
+                url:"modifPrescription",
+                data: "medicament="+$('#lstMedoc').val()+"&individus="+$('#lstTypeIndividu').val()+"&dosage="+$('#lstdosage').val()+"&posologie="+$('#txtPRE_POSOLOGIE').text(),
+                success:function(data)
+                {
+                    $('#div2').empty();
+                    $('#div2').append(data);
+                },
+                error:function()
+                {
+                   alert('erreur');
+                }
+        }
     );
 }
