@@ -80,3 +80,23 @@ function modifMedicament()
         }
     );
 }
+function creerPrescription()
+{
+    $.ajax
+    (
+            {
+                type:"post",
+                url:"creerPrescription",
+                data:"depot="+$('#lstMedoc').val()+"&nom="+$('#lstTypeIndividu').val()+"&code="+$('#lstdosage').val()+"&composition="+$('#txtPRE_POSOLOGIE').text(),
+                success:function(data)
+                {
+                    $('#div1').empty();
+                    $('#div1').append(data);
+                },
+                error:function()
+                {
+                    alert('erreur');
+                }
+            }
+    );
+}
