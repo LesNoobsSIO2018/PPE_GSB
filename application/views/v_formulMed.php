@@ -17,7 +17,7 @@
          <script type="text/javascript" src="  <?php echo base_url(); ?>js/functions.js"></script>
          <script type="text/javascript">
          $(
-                  function(){;
+                  function(){
                          $('#btnValidComF').click(
                          function(){
                              AjFormulMed();        

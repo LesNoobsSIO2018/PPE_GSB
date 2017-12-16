@@ -104,7 +104,7 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Presentation ', 'Queantite de medicament d\'une presentation '],
+          ['Presentation ', 'Quantite de medicament d\'une presentation '],
           <?php
             foreach($lesnbrMedPres as $qte){
                 echo"['".$qte->PRE_LIBELLE."',".$qte->nbMed."],";
@@ -113,7 +113,7 @@
         ]);
 
         var options = {
-          title: 'Queantite de medicament d\'une presentation',
+          title: 'Quantite de medicament d\'une presentation',
           pieHole: 0.4,
           pieSliceText: 'value',
 
@@ -149,7 +149,7 @@
              <br>
             <br>
             
-            <input class=" divImp btn btn-info" type="button" onClick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant_Ivan/modifierComposantMeds'" value="Modifier de composants d'un medicament">
+            <input class=" divImp btn btn-info" type="button" onClick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant_Ivan/modifierComposantMeds'" value="Modifier les composants d'un medicament">
             <input   class=" divImp btn btn-info" type="button" onClick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant_Ivan/ajouterComposantMeds'" value="Ajouter les composants d'un medicament"><br><br>
                       <input id="RevPA" data-toggle="tooltip" data-placement="top" title="Afficher les actions"  class=" divImp btn btn-info" type="button" onClick="location.href='<?php echo base_url(); ?>'" value="Revenir à la page d'accueil"> 
     </div>
