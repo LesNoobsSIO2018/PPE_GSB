@@ -162,4 +162,3 @@ class Ctrl_Visiteur extends CI_Controller{
         
         
 }
-
