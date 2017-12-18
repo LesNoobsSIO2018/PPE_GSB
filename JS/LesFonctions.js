@@ -16,4 +16,3 @@ function ajouterVisiteurRegion(){
            }        
  );
 }
-
