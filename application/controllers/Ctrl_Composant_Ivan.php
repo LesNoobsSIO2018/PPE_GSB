@@ -66,6 +66,7 @@ class Ctrl_Composant_Ivan extends CI_Controller {
                                
                                if($code->CMP_CODE == $data['CMP_CODE']){
                                    $inBase = 1;
+                                   break;
                                }
                                //var_dump($code->CMP_CODE);
                                //break;
@@ -243,17 +244,21 @@ class Ctrl_Composant_Ivan extends CI_Controller {
                         }
                         if($this->input->post('btnValider'))
                          {
-                          $data1["lesPresentations"] = $this->Model_Presentation_Ivan->GetAllPresentations();
-                           $codeP =  $data1['lesPresentations'];
+                          $data2["lesPresentations"] = $this->Model_Presentation_Ivan->GetAllPresentations();
+                           $codeP =  $data2['lesPresentations'];
                            $inBase=0;
+                           //var_dump($data2);
                            foreach ($codeP as $code){
-                               
+//                               var_dump($code->PRE_CODE);
+//                               var_dump($data['PRE_CODE']);
+//                               die;
                                if($code->PRE_CODE == $data['PRE_CODE']){
                                    $inBase = 1;
+                                   break;
                                }
                            }
                             if($inBase == 1){
-                                echo  "Le composant avec ce code est déja occupeé<br>";
+                                echo  "La presentation avec ce code est déja occupeé<br>";
                                  echo "<a class ='link' href='".base_url()."index.php/Ctrl_Composant_Ivan/ajouterPresentation/'> Revenire a la page d'incertion </a>";
 //                                redirect(base_url()."index.php/Ctrl_Composant_Ivan/modife");
                                 
