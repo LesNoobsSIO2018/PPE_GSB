@@ -37,10 +37,38 @@
 
         chart.draw(data, options);
       }
+      
+      
+ 
     </script>
+    <script>
+             google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+                    <?php 
+            foreach($lesStats2 as $stat){
+                echo "['".$stat->REG_NOM."',".$stat->nbVisiteur."],";
+            }
+          ?>
+        ]);
+
+        var options = {
+          title: 'Nombre de visiteur par région'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+</script>
   </head>
   <body>
-    <div id="piechart" style="width: 100%; height: 500px;"></div>
+      <div id="piechart" style="width: 100%; height: 500px;"></div>
+    <div id="piechart2" style="width: 100%; height: 500px;"></div>
   </body>
 
 </html>  

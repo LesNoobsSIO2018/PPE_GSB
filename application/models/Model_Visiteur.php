@@ -24,5 +24,13 @@ class Model_Visiteur extends CI_Model{
     $this->db->query("UPDATE `visiteur` SET `VIS_NOM`='".$Nom."', `Vis_PRENOM`='".$Prenom."', `VIS_ADRESSE`='".$Adresse."', `VIS_CP`='".$Cp."', `VIS_VILLE`='".$Ville."', `VIS_DATEEMBAUCHE`='".$DateEmb."', `SEC_CODE`='".$CodeSecteur."', `LAB_CODE`='".$CodeLabo."' WHERE `visiteur`.`VIS_MATRICULE` = '".$hidden_id."'");
   
     }
+    public function getAllVisiteurs(){
+        $sql = $this->db->query("select * from visiteur");
+       return $sql->result();
+    }
+    
+    public function insereRegVis($region, $visiteur,$date, $role){
+        $this->db->query("INSERT INTO `travailler` (`VIS_MATRICULE`, `JJMMAA`, `REG_CODE`, `TRA_ROLE`) VALUES ('".$visiteur."', '".$date."', '".$region."', '".$role."')");
+    }
 
 }

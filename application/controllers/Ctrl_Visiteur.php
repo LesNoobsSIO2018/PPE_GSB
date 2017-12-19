@@ -4,6 +4,7 @@ class Ctrl_Visiteur extends CI_Controller{
     
        public function index(){
            
+           
        $this->load->model("Model_Visiteur"); 
        $data["lesVisiteurs"] = $this->Model_Visiteur->GetAllVisiteur();
        $this->load->view("v_Accueil",$data);
@@ -36,7 +37,7 @@ class Ctrl_Visiteur extends CI_Controller{
                   'VIS_VILLE' =>$this->input->post('VIS_VILLE'),
                   'VIS_DATEEMBAUCHE' =>$this->input->post('VIS_DATEEMBAUCHE'),
                   'SEC_CODE' =>$this->input->post('SEC_CODE'),
-                  'REG_NOM' =>$this->input->post('REG_NOM'),
+//                  'REG_NOM' =>$this->input->post('REG_NOM'),
                   'LAB_CODE' =>$this->input->post('LAB_CODE')
                       );
 //                      var_dump($data);
@@ -151,14 +152,35 @@ class Ctrl_Visiteur extends CI_Controller{
       ///  $this->load->view("v_ModifierRegionMod", $data);
         }
         public function statistique(){
+            
             $this->load->model("Model_Stats");
             $data["lesStats"]=$this->Model_Stats->getAllRegionDeSecteur();
+            $data["lesStats2"]=$this->Model_Stats->getAllVisiteurDeRegion();
             
             
             $this->load->view("v_Stats",$data); 
             
         }
+        public function InsererVisiteurRegion() {
+            $this->load->model("Model_Region");
+            $this->load->model("Model_Visiteur");
+            $data["lesRegions"] = $this -> Model_Region->getAllRegions();
+            $data["lesVisiteurs"] = $this->Model_Visiteur->getAllVisiteurs();
+            $this->load->view("v_RegionVisiteur", $data);
+            
+        }
+        
+        public function ajoutVisReg(){
+            $this->load->model('Model_Visiteur');
+            $region = $_POST['idRegion'];
+            $visiteur = $_POST['idVisiteur'];
+            $date = $_POST['idDate'];
+            $role = $_POST['idRole'];
+            $this->Model_Visiteur->insereRegVis($region, $visiteur, $date, $role);
+            $this->InsererVisiteurRegion();
+        }
         
         
         
 }
+
