@@ -48,7 +48,7 @@
 
                     </table>
                 <input type="hidden" name="hidden_id" value="<?php echo $unComposant[0]->CMP_CODE; ?>">
-                      <input id="Modifier" class="btn btn-success" type="submit" name="Modifier" value="Modifier"><?php// echo form_submit('btnModifier','Modifier');?>
+                      <input id="Modifier" class="btn btn-success" type="submit" name="Modifier" value="Modifier">
             </div>
              <?php       
                 }

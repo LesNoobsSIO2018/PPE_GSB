@@ -53,8 +53,7 @@ class Ctrl_Composant_Ivan extends CI_Controller {
                         if($this->input->post('Modifier'))
                         {
                             
-                            $this->Model_Composant_Ivan->editComposant($libl, $this->input->post(''
-                                    . '4'));
+                            $this->Model_Composant_Ivan->editComposant($libl, $this->input->post('hidden_id'));
                             redirect(base_url()."index.php/Ctrl_Composant_Ivan/modife");
                         }
                         if($this->input->post('btnValider'))
@@ -98,7 +97,6 @@ class Ctrl_Composant_Ivan extends CI_Controller {
             $CMP_CODE = $this->uri->segment(3);
             $this->load->model("Model_Composant_Ivan");
             $data["unComposant"] = $this->Model_Composant_Ivan->unComposant($CMP_CODE);
-           // $data['lesComposants']=$this->Model_Composant_Ivan->getAllComposants();
             $this->load->view("v_ajouterComposant",$data);
         }
         
