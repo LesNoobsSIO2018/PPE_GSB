@@ -3,7 +3,7 @@
     <head>
         <title> Gestion  </title>
         <h1> Gestion   <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
-        <script type="text/javascript" src="<?php echo base_url(); ?>JS/LesFonctions.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>JS/LesF.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>JQuery/jquery-3.2.1.min.js"></script>
         
 

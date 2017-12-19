@@ -37,7 +37,7 @@ class Ctrl_Visiteur extends CI_Controller{
                   'VIS_VILLE' =>$this->input->post('VIS_VILLE'),
                   'VIS_DATEEMBAUCHE' =>$this->input->post('VIS_DATEEMBAUCHE'),
                   'SEC_CODE' =>$this->input->post('SEC_CODE'),
-                  'REG_NOM' =>$this->input->post('REG_NOM'),
+//                  'REG_NOM' =>$this->input->post('REG_NOM'),
                   'LAB_CODE' =>$this->input->post('LAB_CODE')
                       );
 //                      var_dump($data);
